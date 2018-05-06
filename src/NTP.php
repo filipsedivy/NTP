@@ -55,4 +55,17 @@ class NTP
 
         return $timestamp;
     }
+
+    public static function getLocalDeviation($host = 'pool.ntp.org')
+    {
+        $socket = Socket::create($host);
+        $timestamp = self::getTimestamp($socket);
+
+        $carbon = new Carbon();
+
+        $deviation = new BigNumber($carbon->getTimestamp());
+        $deviation->subtract($timestamp);
+
+        return $deviation->getValue();
+    }
 }
