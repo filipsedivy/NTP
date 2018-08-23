@@ -14,11 +14,13 @@ The NTP reader is a class for reading data from the NTP server over the UDP / TC
 Installation
 ------------
 
-The recommended way to is via Composer:
+The recommended way to is via [Composer](https://packagist.org/packages/filipsedivy/ntp):
 
 ```
 composer require filipsedivy/ntp
 ```
+
+It requires PHP version 7.1 and supports PHP up to 7.2.
 
 ### Tests
 
@@ -34,7 +36,7 @@ Usage
 
 ```php
 $socket = FilipSedivy\NTP\Socket::create('europe.pool.ntp.org');
-$datetime = FilipSedivy\NTP::getDateTime($socket);
+$datetime = FilipSedivy\NTP\Client::getDateTime($socket);
 
 // Carbon library
 echo $datetime->toDateTimeString();
