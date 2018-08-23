@@ -20,6 +20,14 @@ The recommended way to is via Composer:
 composer require filipsedivy/ntp
 ```
 
+### Tests
+
+To run the tests, you must run this command via Composer
+
+```
+composer test
+```
+
 
 Usage
 -----
