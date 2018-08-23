@@ -20,11 +20,12 @@ class NTP
      * @throws \InvalidArgumentException
      * @throws \Socket\Raw\Exception
      */
-    public static function getDateTime(Socket $socket, DateTimeZone $dateTimeZone = null)
+    public static function getDateTime(Socket $socket, DateTimeZone $dateTimeZone = null): Carbon
     {
         $timestamp = self::getTimestamp($socket);
         return Carbon::createFromTimestamp($timestamp, $dateTimeZone);
     }
+
 
     /**
      * @return int
@@ -32,7 +33,7 @@ class NTP
      * @throws \Socket\Raw\Exception
      * @throws \InvalidArgumentException
      */
-    public static function getTimestamp(Socket $socket)
+    public static function getTimestamp(Socket $socket): int
     {
         $client = $socket->getClient();
 
@@ -56,7 +57,13 @@ class NTP
         return $timestamp;
     }
 
-    public static function getLocalDeviation($host = 'pool.ntp.org')
+
+    /**
+     * @param string $host
+     *
+     * @return string
+     */
+    public static function getLocalDeviation($host = 'pool.ntp.org'): string
     {
         $socket = Socket::create($host);
         $timestamp = self::getTimestamp($socket);

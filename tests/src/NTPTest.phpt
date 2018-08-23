@@ -22,7 +22,7 @@ class NTPTest extends TestCase
         Assert::same(get_class($datetime), 'Carbon\Carbon');
         Assert::type('string', $datetime->toDateTimeString());
         Assert::type('int', $datetime->getTimestamp());
-        Assert::type('string', NTP::getTimestamp($socket));
+        Assert::type('int', NTP::getTimestamp($socket));
     }
 }
 
