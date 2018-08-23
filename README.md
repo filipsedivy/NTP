@@ -1,2 +1,2 @@
-# NTP
-NTP reader
+![NTP reader](.github/logo.png)
+
