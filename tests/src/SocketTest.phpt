@@ -7,7 +7,7 @@
 
 use Tester\Assert;
 use Tester\TestCase;
-use FilipSedivy\NTP\Socket;
+use FilipSedivy\NTP;
 
 require_once __DIR__ . '/../bootstrap.php';
 
@@ -15,7 +15,7 @@ class SocketTest extends TestCase
 {
     public function testObject()
     {
-        $socket = Socket::create('europe.pool.ntp.org');
+        $socket = NTP\Socket::create('europe.pool.ntp.org');
 
         Assert::type('object', $socket);
         Assert::same(get_class($socket), 'FilipSedivy\NTP\Socket');
@@ -24,7 +24,7 @@ class SocketTest extends TestCase
 
     public function testProperties()
     {
-        $socket = Socket::create('europe.pool.ntp.org', 123);
+        $socket = NTP\Socket::create('europe.pool.ntp.org', 123);
 
         Assert::type('string', $socket->getHost());
         Assert::type('int', $socket->getPort());

@@ -22,7 +22,7 @@
     },
     "autoload": {
         "files": [
-            "src/NTP.php",
+            "src/Client.php",
             "src/Socket.php"
         ]
     },

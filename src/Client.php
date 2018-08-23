@@ -1,14 +1,13 @@
 <?php
 
-namespace FilipSedivy;
+namespace FilipSedivy\NTP;
 
 use Carbon\Carbon;
-use FilipSedivy\NTP\Socket;
 use DateTimeZone;
 use Moontoast\Math\BigNumber;
 use Stringy\Stringy;
 
-class NTP
+class Client
 {
 
     /**
