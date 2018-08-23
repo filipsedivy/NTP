@@ -15,6 +15,9 @@
         "danielstjules/stringy": "3.1.0",
         "moontoast/math": "1.1.2"
     },
+    "require-dev": {
+        "nette/tester": "^2.0"
+    },
     "autoload": {
         "files": [
             "src/NTP.php",
